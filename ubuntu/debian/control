@@ -28,6 +28,14 @@ Depends: libignition-utils (= ${binary:Version}),
 Multi-Arch: same
 Description: Ignition Robotics Utils Library - Development files
 
+Package: libignition-utils-cli-dev
+Architecture: any
+Section: libdevel
+Depends: libignition-utils-dev (= ${binary:Version}),
+         ${misc:Depends}
+Multi-Arch: same
+Description: Ignition Robotics Utils Library - CLI Development files
+
 Package: libignition-utils-dbg
 Architecture: any
 Section: debug
