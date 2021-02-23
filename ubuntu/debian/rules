@@ -20,8 +20,8 @@ override_dh_strip:
 override_dh_install:
 	dh_install
 	# remove duplicate cli files from utilsx-dev.install regexp
-	cd debian/libignition-utils-cli-dev; find . -type f -exec rm -f ../libignition-utils-dev/{} \;
-	find debian/libignition-utils-dev -type d -empty -delete
+	cd debian/libignition-utils1-cli-dev; find . -type f -exec rm -f ../libignition-utils1-dev/{} \;
+	find debian/libignition-utils1-dev -type d -empty -delete
 
 override_dh_auto_test:
 ifeq ($(DEB_HOST_ARCH),armhf)

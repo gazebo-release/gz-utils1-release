@@ -19,7 +19,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Multi-Arch: same
 Description: Ignition Robotics Utils Library - Shared library
 
-Package: libignition-utils-dev
+Package: libignition-utils1-dev
 Architecture: any
 Section: libdevel
 Depends: libignition-utils (= ${binary:Version}),
@@ -28,10 +28,18 @@ Depends: libignition-utils (= ${binary:Version}),
 Multi-Arch: same
 Description: Ignition Robotics Utils Library - Development files
 
-Package: libignition-utils-cli-dev
+Package: libignition-utils-dev
+Depends: libignition-utils1-dev, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+  This is a transitional package. It can safely be removed.
+
+Package: libignition-utils1-cli-dev
 Architecture: any
 Section: libdevel
-Depends: libignition-utils-dev (= ${binary:Version}),
+Depends: libignition-utils1-dev (= ${binary:Version}),
          ${misc:Depends}
 Multi-Arch: same
 Description: Ignition Robotics Utils Library - CLI Development files
