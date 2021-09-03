@@ -31,7 +31,7 @@ Package: libignition-utils1-dev
 Architecture: any
 Section: libdevel
 Depends: libignition-utils1 (= ${binary:Version}),
-         libignition-cmake2-dev (>= 2.7.0~pre1)
+         libignition-cmake2-dev (>= 2.7.0~pre1),
          ${misc:Depends}
 Multi-Arch: same
 Replaces: libignition-utils-dev (<< 1.0.0)
