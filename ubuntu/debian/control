@@ -20,6 +20,12 @@ Multi-Arch: same
 Replaces: libignition-utils (<< 1.0.0)
 Provides: libignition-utils
 Description: Ignition Robotics Utils Library - Shared library
+ Provides general purpose classes and functions designed for robotic applications.
+ .
+ Ignition Utils provides a wide range of functionality, including:
+   - A helper class to implement the PIMPL pattern
+   - A command line parsing utility
+   - Macros to suppress warnings
 
 Package: libignition-utils1-dev
 Architecture: any
@@ -31,6 +37,12 @@ Multi-Arch: same
 Replaces: libignition-utils-dev (<< 1.0.0)
 Breaks: libignition-utils-dev (<< 1.0.0)
 Description: Ignition Robotics Utils Library - Development files
+ Provides general purpose classes and functions designed for robotic applications.
+ .
+ Ignition Utils provides a wide range of functionality, including:
+   - A helper class to implement the PIMPL pattern
+   - A command line parsing utility
+   - Macros to suppress warnings
 
 Package: libignition-utils-dev
 Depends: libignition-utils1-dev, ${misc:Depends}
@@ -47,6 +59,12 @@ Depends: libignition-utils1-dev (= ${binary:Version}),
          ${misc:Depends}
 Multi-Arch: same
 Description: Ignition Robotics Utils Library - CLI Development files
+ Provides general purpose classes and functions designed for robotic applications.
+ .
+ Ignition Utils provides a wide range of functionality, including:
+   - A helper class to implement the PIMPL pattern
+   - A command line parsing utility
+   - Macros to suppress warnings
 
 Package: libignition-utils1-dbg
 Architecture: any
@@ -57,3 +75,9 @@ Depends:
      ${misc:Depends}
 Multi-Arch: same
 Description: Ignition Robotics Utils Library - Debugging symbols
+ Provides general purpose classes and functions designed for robotic applications.
+ .
+ Ignition Utils provides a wide range of functionality, including:
+   - A helper class to implement the PIMPL pattern
+   - A command line parsing utility
+   - Macros to suppress warnings
