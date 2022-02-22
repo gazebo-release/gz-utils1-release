@@ -1,0 +1,136 @@
+#!/bin/sh
+# autopkgtest check: Build and run a program against ign-msgs, to verify that the
+# headers and pkg-config file are installed correctly
+# (C) 2012 Jose Luis Rivero
+# Author: Jose Luis Rivero <jrivero@osrfoundation.org>
+
+set -e
+
+WORKDIR=$(mktemp -d)
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+cat <<EOF > igntest.cc
+
+#include <ignition/utils/ImplPtr.hh>
+#include <ignition/utils/Export.hh>
+
+#include <string>
+
+/// \brief A forward-declared implementation class
+class ObjectPrivate;
+
+/// \brief A PIMPL test class that can be copied (alternate definition)
+class IGNITION_UTILS_VISIBLE CopyableObjectAlt
+{
+  /// \brief Constructor
+  public: CopyableObjectAlt(int _ivalue = 0,
+			    const std::string &_svalue = "");
+
+  /// \brief Get the int value held by the pimpl
+  public: int GetInt() const;
+
+  /// \brief Set the int value held by the pimpl
+  public: void SetInt(const int _value);
+
+  /// \brief Get the string value held by the pimpl
+  public: const std::string &GetString() const;
+
+  /// \brief Set the string value held by the pimpl
+  public: void SetString(const std::string &_value);
+
+  /// \brief Pointer to implementation
+  /// This will automatically forward declare a class named
+  /// "Implementation" inline
+  IGN_UTILS_IMPL_PTR(dataPtr)
+};
+
+//////////////////////////////////////////////////
+class CopyableObjectAlt::Implementation
+{
+  public: int ivalue;
+  public: std::string svalue;
+};
+
+//////////////////////////////////////////////////
+CopyableObjectAlt::CopyableObjectAlt(const int _ivalue,
+                               const std::string &_svalue)
+  : dataPtr(ignition::utils::MakeImpl<Implementation>(_ivalue, _svalue))
+{
+  // Do nothing
+}
+
+//////////////////////////////////////////////////
+int CopyableObjectAlt::GetInt() const
+{
+  return dataPtr->ivalue;
+}
+
+//////////////////////////////////////////////////
+void CopyableObjectAlt::SetInt(const int _value)
+{
+  dataPtr->ivalue = _value;
+}
+
+//////////////////////////////////////////////////
+const std::string &CopyableObjectAlt::GetString() const
+{
+  return (*dataPtr).svalue;
+}
+
+//////////////////////////////////////////////////
+void CopyableObjectAlt::SetString(const std::string &_value)
+{
+  (*dataPtr).svalue = _value;
+}
+
+int main(int argc, char **argv)
+{
+  CopyableObjectAlt foo;
+  return 0;
+}
+EOF
+
+g++ -o igntest igntest.cc `pkg-config --cflags ignition-utils1`
+echo "build pkg-config: OK"
+[ -x igntest ]
+./igntest
+echo "run: OK"
+
+# 2. CMAKE
+cat <<EOF > CMakeLists.txt
+cmake_minimum_required(VERSION 3.5)
+
+project(ign_test VERSION 1.0.0)
+
+find_package(ignition-utils1 1.0.0 REQUIRED)
+include_directories(\${IGNITION-UTILS_INCLUDE_DIRS})
+add_executable(igntest igntest.cc)
+EOF
+
+cmake .
+echo "configure cmake: OK"
+make
+echo "build cmake:OK"
+[ -x igntest ]
+./igntest
+echo "run: OK"
+
+cat <<EOF > CMakeLists.txt
+cmake_minimum_required(VERSION 3.5)
+
+project(ign_test VERSION 1.0.0)
+
+find_package(ignition-utils1 1.0.0 REQUIRED)
+add_executable(igntest igntest.cc)
+target_link_libraries(igntest
+   PUBLIC
+      ignition-utils1::ignition-utils1)
+EOF
+
+cmake .
+echo "configure cmake with component: OK"
+make
+echo "build cmake component:OK"
+[ -x igntest ]
+./igntest
+echo "run: OK"
