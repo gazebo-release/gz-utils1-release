@@ -1,3 +1,9 @@
+ignition-utils1 (1.3.0-1~buster) buster; urgency=medium
+
+  * ignition-utils1 1.3.0-1 release
+
+ -- Michael Carroll <michael@openrobotics.org>  Thu, 24 Feb 2022 15:48:57 -0600
+
 ignition-utils1 (1.2.0+osrf-1~buster) buster; urgency=medium
 
   * ignition-utils1 1.2.0+osrf-1 release
