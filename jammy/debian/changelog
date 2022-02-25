@@ -1,0 +1,11 @@
+ignition-utils1 (1.2.0+osrf-1~jammy) jammy; urgency=medium
+
+  * ignition-utils1 1.2.0+osrf-1 release
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Tue, 22 Feb 2022 21:09:05 +0100
+
+ignition-utils1 (1.2.0-1~jammy) jammy; urgency=medium
+
+  * First release for jammy
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Tue, 22 Feb 2022 20:35:33 +0100
