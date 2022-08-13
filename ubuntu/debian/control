@@ -6,10 +6,10 @@ Build-Depends: cmake,
                debhelper (>= 7.0.50~),
                doxygen,
                libignition-cmake2-dev (>= 2.8.0) | libignition-cmake-dev (>= 2.8.0)
-Vcs-Browser: https://github.com/ignitionrobotics/ignition-utils
-Vcs-Git: https://github.com/ignitionrobotics/ign-utils-release
+Vcs-Browser: https://github.com/gazebosim/gz-utils
+Vcs-Git: https://github.com/gazebosim/gz-utils-release
 Standards-Version: 4.5.1
-Homepage: https://github.com/ignitionrobotics/ign-utils
+Homepage: https://github.com/gazebosim/gz-utils
 
 Package: libignition-utils1
 Architecture: any
@@ -17,10 +17,10 @@ Section: libs
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Multi-Arch: same
-Description: Ignition Robotics Utils Library - Shared library
+Description: Gazebo Utils Library - Shared library
  Provides general purpose classes and functions designed for robotic applications.
  .
- Ignition Utils provides a wide range of functionality, including:
+ Gazebo Utils provides a wide range of functionality, including:
    - A helper class to implement the PIMPL pattern
    - A command line parsing utility
    - Macros to suppress warnings
@@ -34,10 +34,10 @@ Depends: libignition-utils1 (= ${binary:Version}),
 Multi-Arch: same
 Replaces: libignition-utils-dev (<< 1.2.0+ds-1~)
 Breaks: libignition-utils-dev (<< 1.2.0+ds-1~)
-Description: Ignition Robotics Utils Library - Development files
+Description: Gazebo Utils Library - Development files
  Provides general purpose classes and functions designed for robotic applications.
  .
- Ignition Utils provides a wide range of functionality, including:
+ Gazebo Utils provides a wide range of functionality, including:
    - A helper class to implement the PIMPL pattern
    - A command line parsing utility
    - Macros to suppress warnings
@@ -50,10 +50,10 @@ Depends: libignition-utils1-dev (= ${binary:Version}),
 Multi-Arch: same
 Replaces: libignition-utils-dev (<< 1.2.0+ds-1~)
 Breaks: libignition-utils-dev (<< 1.2.0+ds-1~)
-Description: Ignition Robotics Utils Library - CLI Development files
+Description: Gazebo Utils Library - CLI Development files
  Provides general purpose classes and functions designed for robotic applications.
  .
- Ignition Utils provides a wide range of functionality, including:
+ Gazebo Utils provides a wide range of functionality, including:
    - A helper class to implement the PIMPL pattern
    - A command line parsing utility
    - Macros to suppress warnings
@@ -66,10 +66,10 @@ Depends:
      libignition-utils1 (= ${binary:Version}),
      ${misc:Depends}
 Multi-Arch: same
-Description: Ignition Robotics Utils Library - Debugging symbols
+Description: Gazebo Utils Library - Debugging symbols
  Provides general purpose classes and functions designed for robotic applications.
  .
- Ignition Utils provides a wide range of functionality, including:
+ Gazebo Utils provides a wide range of functionality, including:
    - A helper class to implement the PIMPL pattern
    - A command line parsing utility
    - Macros to suppress warnings
