@@ -1,8 +1,8 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ignition-utils
-Upstream-Contact: https://github.com/ignitionrobotics/ign-utils/issues
-Source: https://github.com/ignitionrobotics/ign-utils
-Files-Excluded: NEWS test/gtest .github BUILD.bazel bitbucket-pipelines.yml cli/include/vendored-cli
+Upstream-Contact: https://github.com/gazebosim/gz-utils/issues
+Source: https://github.com/gazebosim/gz-utils
+Files-Excluded: NEWS test/gtest .github BUILD.bazel cli/include/vendored-cli
 
 Files: *
 Copyright: 2012-2020, Open Source Robotics Foundation
