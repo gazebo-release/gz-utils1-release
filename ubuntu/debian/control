@@ -73,3 +73,35 @@ Description: Gazebo Utils Library - Debugging symbols
    - A helper class to implement the PIMPL pattern
    - A command line parsing utility
    - Macros to suppress warnings
+
+Package: gz-utils1
+Depends: ignition-utils1 (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
+
+Package: libgz-utils1-dev
+Depends: libignition-utils1-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
+
+Package: libgz-utils1-cli-dev
+Depends: libignition-utils1-cli-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
+
+Package: libgz-utils1-dbg
+Depends: libignition-utils1-dbg (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ It's recommended to use the gz packages going forward.
