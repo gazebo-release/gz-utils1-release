@@ -74,8 +74,8 @@ Description: Gazebo Utils Library - Debugging symbols
    - A command line parsing utility
    - Macros to suppress warnings
 
-Package: gz-utils1
-Depends: ignition-utils1 (= ${binary:Version}), ${misc:Depends}
+Package: libgz-utils1
+Depends: libignition-utils1 (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
 Section: oldlibs
