@@ -1,3 +1,9 @@
+ignition-utils1 (1.4.0-4~jammy) jammy; urgency=medium
+
+  * ignition-utils1 1.4.0-4 release
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Fri, 26 Aug 2022 20:40:57 +0200
+
 ignition-utils1 (1.4.0-3~jammy) jammy; urgency=medium
 
   * ignition-utils1 1.4.0-3 release
