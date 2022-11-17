@@ -1,3 +1,9 @@
+ignition-utils1 (1.4.1-0~focal) focal; urgency=medium
+
+  * ignition-utils1 1.4.1-0 release
+
+ -- Nate Koenig <nate@openrobotics.org>  Thu, 17 No 2022 13:20:50 -0800
+
 ignition-utils1 (1.4.0-4~focal) focal; urgency=medium
 
   * ignition-utils1 1.4.0-4 release
