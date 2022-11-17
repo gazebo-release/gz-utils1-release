@@ -1,6 +1,6 @@
-ignition-utils1 (1.4.1-0~jammy) jammy; urgency=medium
+ignition-utils1 (1.4.1-1~jammy) jammy; urgency=medium
 
-  * ignition-utils1 1.4.1-0 release
+  * ignition-utils1 1.4.1-1 release
 
  -- Nate Koenig <nate@openrobotics.org>  Thu, 17 No 2022 13:20:50 -0800
 
